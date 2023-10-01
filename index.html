@@ -1,216 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juventude em diferentes epocas</title>
+    <title>Juventude Blog</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="charset" content="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="title" content="Juventude Blog">
+    <meta name="description" content="juventude em diversas epocas">
+    <meta name="author" content="Gabriel Aplok">
+    <meta name="keywords" content="juventude, blog, epocas, diferentes epocas">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt-BR">
+    <meta property="og:site_name" content="Juventude Blog">
+    <meta property="og:title" content="Juventude Blog">
+    <meta property="og:description" content="juventude em diversas epocas">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="light">
-    <div class="layout-main">
-        <header class="hero dark">
-            <div class="hero-background"></div>
-            <div class="hero-content">
-                <nav>
-                    <ul>
-                        <li><a href="#">epoca 1</a></li>
-                        <li><a href="#">epoca 2</a></li>
-                        <li><a href="#">epoca 3</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <h1>Juventude</h1>
-            <p>
-                Revelando a Juventude atraves das Epocas: Um olhar no passado, presente e futuro.
-            </p>
-        </header>
-        <main>
-            <section class="epoca">
-                <h2>epoca 1</h2>
-                <p>blabkabkbakabakabajahjaduiggdj89ehFHUIHHHEHUVHUIH8FHUNBVVYHFHHuguicdgdgvhudhcudhudh</p>
-            </section>
-            <section class="epoca">
-                <h2>epoca 1</h2>
-                <p>blabkabkbakabakabajahjaduiggdj89ehFHUIHHHEHUVHUIH8FHUNBVVYHFHHuguicdgdgvhudhcudhudh</p>
-            </section>
-            <section class="epoca">
-                <h2>epoca 1</h2>
-                <p>blabkabkbakabakabajahjaduiggdj89ehFHUIHHHEHUVHUIH8FHUNBVVYHFHHuguicdgdgvhudhcudhudh</p>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2023 blog da juventude</p>
-        </footer>
+<body>
+    <div class="header-container">
+        <div class="header" id="header">
+            <a href="#" class="logo">Juventude</a>
+            <a href="#" class="active">Teste</a>
+            <a href="#">Teste</a>
+            <a href="#">Teste</a>
+            <a href="#">Teste</a>
+            <a href="javascript:void(0);" class="menu" onclick="headerMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </div>
+    <div class="content">
+        <h1>Blog</h1>
+        <div class="blog">
+            <div class="post" onclick="window.location = '#';">
+                <h3>Hello World: My first post!</h3>
+                <hr />
+            </div>
+            <div class="post" onclick="window.location = '#';">
+                <img src="https://cademeuwhiskey.files.wordpress.com/2018/12/a-juventude-do-sc3a9culo-xix-em-12-fotos-curiosas.jpg?w=584" alt="Image">
+                <h3>How to Setup Git in Termux</h3>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://x.com/GabrielAplok" target="_blank">
+                <i class="fa-brands fa-x-twitter fa-1x"></i>
+            </a>
+            <a href="https://youtube.com/GabrielAplok" target="_blank">
+                <i class="fa-brands fa-youtube fa-1x"></i>
+            </a>
+            <a href="https://github.com/gabriel-aplok/" target="_blank">
+                <i class="fa-brands fa-github fa-1x"></i>
+            </a>
+        </div>
+
+        <p>&copy; 2018-2023 <strong>Gabriel Aplok</strong>. All rights reserved.</p>
+
+        <small>All copyrights and trademarks are the property of their respective owners.</small>
+    </footer>
+
+    <div class="cookie-consent">
+        <h2>Cookie Consent</h2>
+        <p>
+            Some cookies collect data only to remember your user's website preferences. In the case of analytics or
+            marketing cookies, we always collect as little data as possible to ensure we keep our marketing well
+            targeted - which usually results in you not being spammed by any of our ads. We also never analyze data
+            about you, in particular, everything at FireWave is analyzed in aggregate. <a href="/privacy.html">Learn
+                more</a>
+        </p>
+        <button class="button cookie-consent-button" style="width: 95%;">CONTINUE</button>
+    </div>
+    <script src="index.js"></script>
 </body>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-    :root,
-    .light {
-        --background-color: #FFFFFF;
-        --text-color: #212121;
-        --brand-color: green;
-    }
-
-    .dark {
-        --background-color: #212121;
-        --text-color: #ffffff;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: var(--background-color);
-        color: var(--text-color);
-        font-family: Lato, sans-serif;
-        font-size: 18px;
-        letter-spacing: 0.5px;
-        line-height: 1.6;
-        padding: 0;
-        margin: 0;
-        scroll-behavior: smooth;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: var(--text-color);
-        font-weight: bold;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    h3 {
-        font-size: 24px;
-    }
-
-    h4 {
-        font-size: 20px;
-    }
-
-    h5 {
-        font-size: 16px;
-    }
-
-    h6 {
-        font-size: 14px;
-        opacity: 0.6;
-    }
-
-    a,
-    p {
-        opacity: 0.6;
-        text-decoration: none;
-    }
-
-    a:hover {
-        opacity: 0.4;
-        text-decoration: none;
-    }
-
-    .hero {
-        background-color: var(--background-color);
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), var(--background-color)), url("bg.jpeg");
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: var(--text-color);
-        text-align: center;
-        justify-content: space-around;
-        flex-direction: row;
-        display: flex;
-        width: 100%;
-        height: 100vh;
-        padding: 30px;
-    }
-
-    .hero h1 {
-        font-size: 2.75em;
-    }
-
-    .hero p {
-        font-size: 1em;
-    }
-
-    nav {
-        position: fixed;
-        overflow: hidden;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 999999;
-    }
-
-    nav ul {
-        list-style-type: none;
-    }
-
-    nav ul li {
-        display: inline;
-        margin-right: 20px;
-    }
-
-    nav ul li a {
-        color: var(--text-color);
-        border-radius: 2px;
-        border-bottom: 2px solid var(--text-color);
-        padding: 6px;
-    }
-
-    main {
-        max-width: 800px;
-        min-height: 80vh;
-        margin: 20px;
-        padding: 20px;
-        background-color: var(--background-color);
-    }
-
-    .epoca {
-        border-left: 4px solid var(--text-color);
-        background-color: rgba(0, 0, o, o.1);
-        margin-bottom: 30px;
-        padding: 10px;
-    }
-
-    .epoca h2 {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
-
-    .epoca p {
-        line-height: 1.5;
-    }
-
-    footer {
-        background-color: var(--text-color);
-        color: var(--background-color);
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    @media (max-width: 768px) {
-        main {
-            padding: 10px;
-        }
-    }
-</style>
 
 </html>
