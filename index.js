@@ -1,4 +1,5 @@
 const header = document.getElementById("header");
+const scrollIndicator = document.getElementById("scroll-indicator-bar");
 
 window.onscroll = function () {
     scrollIndicator();
@@ -29,5 +30,5 @@ function scrollIndicator() {
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrolled = (winScroll / height) * 100;
 
-    document.getElementById("scroll-indicator-bar").style.width = scrolled + "%";
+    if (scrollIndicator) scrollIndicator.style.width = scrolled + "%";
 }
