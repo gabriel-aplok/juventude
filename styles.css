@@ -144,6 +144,8 @@ body {
 .content {
     max-width: 80%;
     min-height: 80vh;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 .footer {
@@ -429,9 +431,7 @@ details[open]>*:last-child {
 
 .blog .post {
     margin: 0;
-    padding: 12px;
-    border: 1px solid var(--table-color);
-    border-radius: 4px;
+    padding: 20px 0;
 }
 
 .blog .post h2 {
@@ -442,7 +442,9 @@ details[open]>*:last-child {
     opacity: 0.8;
 }
 
-.blog .post p {
+.blog .post p,
+.blog .post small,
+.blog .post hr {
     opacity: 0.8;
 }
 
