@@ -61,10 +61,6 @@ body {
     z-index: 999999;
 }
 
-.header-container+.content {
-    padding-top: 2.5vh;
-}
-
 .header {
     background-color: var(--heading-color);
     overflow: hidden;
@@ -148,8 +144,6 @@ body {
 .content {
     max-width: 80%;
     min-height: 80vh;
-    margin: 20px auto;
-    padding: 0 20px;
 }
 
 .footer {
@@ -346,8 +340,8 @@ img {
 }
 
 .tag {
-    background-color: var(--table-color);
-    color: var(--heading-color);
+    background-color: var(--heading-color);
+    color: var(--background-color);
     padding: 5px;
     margin: 5px 2px;
     border-radius: 3px;
@@ -436,6 +430,8 @@ details[open]>*:last-child {
 .blog .post {
     margin: 0;
     padding: 12px;
+    border: 1px solid var(--table-color);
+    border-radius: 4px;
 }
 
 .blog .post h2 {
@@ -446,11 +442,10 @@ details[open]>*:last-child {
     opacity: 0.8;
 }
 
-.blog .post img {
-    width: 100%;
-    height: auto;
+.blog .post p {
+    opacity: 0.8;
 }
 
 .blog .post:hover {
-    filter: blur(2px);
+    opacity: 0.75;
 }
