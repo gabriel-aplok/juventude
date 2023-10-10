@@ -1,81 +1,93 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <title>Juventude Blog</title>
+	<title>Juventude Blog</title>
 
-    <meta name="charset" content="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="title" content="Juventude Aqui">
-    <meta name="description" content="juventude em diversas epocas">
-    <meta name="author" content="Gabriel Lima">
-    <meta name="keywords" content="juventude, blog, epocas, diferentes epocas">
+	<meta name="charset" content="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="title" content="Juventude Aqui">
+	<meta name="description" content="juventude em diversas epocas">
+	<meta name="author" content="Gabriel Lima">
+	<meta name="keywords" content="juventude, blog, epocas, escola">
 
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt-BR">
-    <meta property="og:site_name" content="Juventude Aqui">
-    <meta property="og:title" content="Juventude Aqui">
-    <meta property="og:description" content="juventude em diversas epocas">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="pt-BR">
+	<meta property="og:site_name" content="Juventude Aqui">
+	<meta property="og:title" content="Juventude Aqui">
+	<meta property="og:description" content="juventude em diversas epocas">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" href="{{ 'favicon.ico' | absolute_url }}" type="image/x-icon">
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="{{ 'styles.css' | absolute_url }}">
 </head>
 
 <body>
-    <div class="header-container">
-        <div class="header" id="header">
-            <a href="#" class="logo"><i class="fa fa-newspaper"></i> Juventude Aqui</a>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="pensamentos">Pensamentos</a>
-            <a href="#">Teste</a>
-            <a href="#">Teste</a>
-            <a href="javascript:void(0);" class="menu" onclick="headerMenu()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </div>
-    <div class="content">
-        <h1>Blog</h1>
-        <div class="blog">
-            <div class="post" onclick="window.location = '#';">
-                <h2>A INVENÇÃO DA JUVENTUDE</h2>
-                <p>
-                    Foi só no século 19 que se chegou a ideia de que existe algo entre criança e adulto
-                </p>
-                <small>postaso em xx/xx/xx em 55r</small>
-                <hr>
-            </div>
-        </div>
-    </div>
-    <footer class="footer">
-        <div class="social-media">
-            <a href="https://x.com/GabrielAplok" target="_blank">
-                <i class="fa-brands fa-x-twitter fa-1x"></i>
-            </a>
-            <a href="https://instagram.com/gabriel__yeah" target="_blank">
-                <i class="fa-brands fa-instagram fa-1x"></i>
-            </a>
-            <a href="https://github.com/gabriel-aplok/" target="_blank">
-                <i class="fa-brands fa-github fa-1x"></i>
-            </a>
-        </div>
-        <small>Feito com ♥️ por Gabriel Lima em Ceará, BR. Ceara Cientifico &copy; 2023-presente FireWave LTDA.</small>
-    </footer>
+	<div class="header-container">
+		<div class="header" id="header">
+			<a href="{{ 'index.html' | absolute_url }}" class="logo"><i class="fa fa-newspaper"></i> Juventude Aqui</a>
+			<a href="{{ 'index.html' | absolute_url }}" class="active">Inicio</a>
+			<a href="{{ 'thoughts.html' | absolute_url }}">Pensamentos</a>
+			<a href="javascript:void(0);" class="menu" onclick="headerMenu()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+	</div>
+	<div class="content home">
+		<div class="blog">
+			<h1>Postagens</h1>
+			{% assign posts = site.blog | sort: 'date' %}
+			{% for post in posts %}
+			{% if post.status == 'public' %}
+			<div class="post" onclick="window.location = '{{ site.baseurl }} {{ post.url }}';">
+				<span class="tag">Juventude</span>
+				<h2>{{ post.title }}</h2>
+				<p>
+					{{ post.description }}
+				</p>
+				{% assign months = "Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro" | split: "|" %}
+				{% assign m = page.date | date: "%-m" | minus: 1 %}
+				{% assign day = page.date | date: "%d" %}
+				{% assign month = months[m] %}
+				{% assign year = page.date | date: "%Y" %}
+				<small>Postado em {{ day }} de {{ month }} de {{ year }}</small>
+				<hr>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+	<footer class="footer">
+		<small>Em Desenvolvimento Constante.</small>
+		<div class="social-media">
+			<a href="https://x.com/GabrielAplok" target="_blank">
+				<i class="fa-brands fa-x-twitter fa-1x"></i>
+			</a>
+			<a href="https://instagram.com/gabriel__yeah" target="_blank">
+				<i class="fa-brands fa-instagram fa-1x"></i>
+			</a>
+			<a href="https://github.com/gabriel-aplok/" target="_blank">
+				<i class="fa-brands fa-github fa-1x"></i>
+			</a>
+		</div>
+		<small>Feito com ♥️ por Gabriel Lima em Ceará, BR. Ceará Científico.</small>
+	</footer>
 
-    <div class="cookie-consent">
-        <h2>Cookie Consent</h2>
-        <p>
-            Some cookies collect data only to remember your user's website preferences. In the case of analytics or
-            marketing cookies, we always collect as little data as possible to ensure we keep our marketing well
-            targeted - which usually results in you not being spammed by any of our ads. We also never analyze data
-            about you, in particular, everything at FireWave is analyzed in aggregate. <a href="/privacy.html">Learn
-                more</a>
-        </p>
-        <button class="button cookie-consent-button" style="width: 95%;">CONTINUE</button>
-    </div>
-    <script src="index.js"></script>
+	<div class="cookie-consent">
+		<h2>Consentimento de cookies</h2>
+		<p>
+			Alguns cookies coletam dados apenas para lembrar as preferências do usuário no site.  No caso de análise ou
+ cookies de marketing, sempre coletamos o mínimo de dados possível para garantir que mantemos bem nosso marketing
+ direcionado - o que geralmente faz com que você não receba spam de nenhum de nossos anúncios.  Também nunca analisamos dados
+ sobre você, em particular, tudo na FireWave é analisado de forma agregada.<a href="https://gabriel-aplok.github.io/privacy.html">Saber mais</a>
+		</p>
+		<button class="button cookie-consent-button" style="width: 95%;">CONTINUAR</button>
+	</div>
+	<script src="{{ 'index.js' | absolute_url }}"></script>
 </body>
 
 </html>

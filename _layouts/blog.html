@@ -1,0 +1,118 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<title>{{ page.title }} - {{ site.title }}</title>
+
+	<meta name="charset" content="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="title" content="{{ page.title }} - {{ site.title }}">
+	<meta name="description" content="{{ page.description }}">
+	<meta name="author" content="Gabriel Lima">
+	<meta name="keywords" content="juventude, blog, epocas, escola">
+
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="pt-BR">
+	<meta property="og:site_name" content="{{ page.title }} - {{ site.title }}">
+	<meta property="og:title" content="{{ page.title }} - {{ site.title }}">
+	<meta property="og:description" content="{{ page.description }}">
+
+	<link rel="shortcut icon" href="{{ 'favicon.ico' | absolute_url }}" type="image/x-icon">
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<link rel="stylesheet" href="{{ 'styles.css' | absolute_url }}">
+</head>
+
+<body>
+	<div class="header-container">
+		<div class="header" id="header">
+			<a href="{{ 'index.html' | absolute_url }}" class="logo"><i class="fa fa-newspaper"></i> {{ page.title }}</a>
+			<a href="{{ 'index.html' | absolute_url }}">Inicio</a>
+			<a href="{{ 'thoughts.html' | absolute_url }}">Pensamentos</a>
+			<a href="javascript:void(0);" class="menu" onclick="headerMenu()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+	</div>
+	<div class="content article">
+		<p style="text-transform: uppercase;">
+			<span class="tag">Postagens</span> / <u>{{ page.title }}</u>
+		</p>
+		<h1 style="text-transform: uppercase;">{{ page.title }}</h1>
+		<p>{{ page.description }}</p>
+		{% assign months = "Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro" | split: "|" %}
+		{% assign m = page.date | date: "%-m" | minus: 1 %}
+		{% assign day = page.date | date: "%d" %}
+		{% assign month = months[m] %}
+		{% assign year = page.date | date: "%Y" %}
+		<div class="author">
+			<img src="https://github.com/gabriel-aplok.png">
+			<div>
+				<p>Por <span class="link">{{ page.author }}</span></p>
+				<p>Postado em {{ day }} de {{ month }} de {{ year }}</p>
+			</div>
+		</div>
+		{% if page.status == 'public' %}
+		{{ content }}
+		{% if page.tags %}
+		<span class="tag">{{ page.tags | join: '</span> <span class="tag">'}}</span>
+		{% endif %}
+		<div class="blog">
+			<h1>Outras Postagens</h1>
+			{% assign posts = site.blog | sort: 'date' %}
+			{% for post in posts limit:5 %}
+			{% if post.status == 'public' and post.url != page.url %}
+			<div class="post" onclick="window.location = '{{ site.baseurl }} {{ post.url }}';">
+				<span class="tag">Juventude</span>
+				<h2>{{ post.title }}</h2>
+				<p>
+					{{ post.description }}
+				</p>
+				{% assign months = "Janeiro|Fevereiro|Março|Abril|Maio|Junho|Julho|Agosto|Setembro|Outubro|Novembro|Dezembro" | split: "|" %}
+				{% assign m = page.date | date: "%-m" | minus: 1 %}
+				{% assign day = page.date | date: "%d" %}
+				{% assign month = months[m] %}
+				{% assign year = page.date | date: "%Y" %}
+				<small>Postado em {{ day }} de {{ month }} de {{ year }}</small>
+				<hr>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+		{% else %}
+		<p>A postagem que você seguiu não é pública, entre em contato comigo (ou seja, através das redes sociais do rodapé) ou tente novamente mais tarde.</p>
+		{% endif %}
+	</div>
+	<footer class="footer">
+		<small>Em Desenvolvimento Constante.</small>
+		<div class="social-media">
+			<a href="https://x.com/GabrielAplok" target="_blank">
+				<i class="fa-brands fa-x-twitter fa-1x"></i>
+			</a>
+			<a href="https://instagram.com/gabriel__yeah" target="_blank">
+				<i class="fa-brands fa-instagram fa-1x"></i>
+			</a>
+			<a href="https://github.com/gabriel-aplok/" target="_blank">
+				<i class="fa-brands fa-github fa-1x"></i>
+			</a>
+		</div>
+		<small>Feito com ♥️ por Gabriel Lima em Ceará, BR. Ceará Científico.</small>
+	</footer>
+
+	<div class="cookie-consent">
+		<h2>Consentimento de cookies</h2>
+		<p>
+			Alguns cookies coletam dados apenas para lembrar as preferências do usuário no site.  No caso de análise ou
+ cookies de marketing, sempre coletamos o mínimo de dados possível para garantir que mantemos bem nosso marketing
+ direcionado - o que geralmente faz com que você não receba spam de nenhum de nossos anúncios.  Também nunca analisamos dados
+ sobre você, em particular, tudo na FireWave é analisado de forma agregada.<a href="https://gabriel-aplok.github.io/privacy.html">Saber mais</a>
+		</p>
+		<button class="button cookie-consent-button" style="width: 95%;">CONTINUAR</button>
+	</div>
+	<script src="{{ 'index.js' | absolute_url }}"></script>
+</body>
+
+</html>
