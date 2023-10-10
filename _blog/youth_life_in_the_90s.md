@@ -4,6 +4,7 @@ status: public
 title: "Vida jovem nos anos 90"
 description: "Visão das vidas e experiências da juventude na década de 90."
 author: Gabriel Lima
+tags: [juventude, velha-guarda, nostalgia, trabalho, educacao, sociedade]
 date: 2023-10-08
 ---
 

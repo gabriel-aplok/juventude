@@ -34,4 +34,4 @@ A felicidade para a juventude moderna está associada a uma variedade de fatores
 
 ### Conclusão
 
-As histórias representam as experiências e desafios comuns enfrentados pela juventude moderna até o momento. A tecnologia, as mudanças culturais e as questões globais moldam suas vidas de maneira única. Compreender as experiências da juventude atual é essencial para contextualizar o mundo em rápida evolução em que vivemos e refletir sobre o que significa ser jovem nos tempos contemporâneos.
+Essas histórias representam as experiências e desafios comuns enfrentados pela juventude moderna até o momento. A tecnologia, as mudanças culturais e as questões globais moldam suas vidas de maneira única. Compreender as experiências da juventude atual é essencial para contextualizar o mundo em rápida evolução em que vivemos e refletir sobre o que significa ser jovem nos tempos contemporâneos.

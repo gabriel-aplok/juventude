@@ -1,9 +1,5 @@
 const header = document.getElementById("header");
 
-window.onscroll = function () {
-	scrollIndicator();
-};
-
 document.addEventListener("DOMContentLoaded", () => {
 	const cookieConsent = document.querySelector(".cookie-consent");
 	const cookieConsentButton = document.querySelector(".cookie-consent-button");
@@ -24,10 +20,36 @@ function headerMenu() {
 	header.classList.toggle("open");
 }
 
-function scrollIndicator() {
-	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-	let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-	let scrolled = (winScroll / height) * 100;
+let slideIndex = 1;
 
-	document.getElementById("scroll-indicator-bar").style.width = scrolled + "%";
+showSlides(slideIndex);
+
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	let i;
+	let slides = document.getElementsByClassName("slides");
+	let dots = document.getElementsByClassName("dot");
+
+	if (n > slides.length) {
+		slideIndex = 1;
+	}
+	if (n < 1) {
+		slideIndex = slides.length;
+	}
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+
+	slides[slideIndex - 1].style.display = "block";
+	dots[slideIndex - 1].className += " active";
 }
